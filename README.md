@@ -13,8 +13,8 @@ Dieses Material richtet sich an:
 
 ## Inhalt des Repositories
 
-* **`Von_Dreisatz_zu_Integralen-7.pdf`**: Das Hauptlehrbuch.
-* **`[NAME_IHRES_LOESUNGSBUCHS].pdf`**: Das Lösungsbuch zum Lehrbuch. *(Bitte ersetzen Sie `[NAME_IHRES_LOESUNGSBUCHS].pdf` mit dem tatsächlichen Dateinamen Ihres Lösungsbuchs, z.B. `Von_Dreisatz_zu_Integralen-Loesungen.pdf`)*
+* **`Von_Dreisatz_zu_Integralen.pdf`**: Das Hauptlehrbuch.
+* **`[Von_Dreisatz_zu_Integralen_Lösungen].pdf`**: Das Lösungsbuch zum Lehrbuch. 
 
 ## Schwerpunkte des Inhalts
 
@@ -46,6 +46,4 @@ Kurz gesagt bedeutet das:
 
 Fehler entdeckt, Anregungen oder Verbesserungsvorschläge? Bitte erstellen Sie ein "Issue" in diesem Repository.
 
-## Autor
 
-[Ihr Name oder Pseudonym, falls gewünscht]

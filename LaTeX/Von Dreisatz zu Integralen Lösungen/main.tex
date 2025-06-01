@@ -1,0 +1,220 @@
+\documentclass[twoside, a4paper,12pt]{article}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\geometry{margin=2cm, left=1cm, right=1cm, top=1cm}
+\usepackage{polynom}
+\usepackage{longdivision}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable,hooks}
+\usepackage{wasysym}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+% Farben definieren für Boxen
+\definecolor{merkboxcolorbg}{RGB}{220, 230, 255}
+\definecolor{beispielboxcolorbg}{RGB}{220, 255, 220}
+\definecolor{aufgabeboxcolorbg}{RGB}{255, 240, 220}
+\definecolor{infoboxcolorbg}{RGB}{230, 230, 230}
+\definecolor{kurzknappcolorbg}{RGB}{255, 255, 200}
+\definecolor{fehlerboxcolorbg}{RGB}{255, 220, 220}
+\definecolor{warumwichtigcolorbg}{RGB}{220, 240, 255}
+\definecolor{tippboxcolorbg}{RGB}{230,250,230}
+
+\definecolor{merkboxframe}{RGB}{0, 0, 150}
+\definecolor{beispielboxframe}{RGB}{0, 100, 0}
+\definecolor{aufgabeboxframe}{RGB}{150, 75, 0}
+\definecolor{infoboxframe}{RGB}{100, 100, 100}
+\definecolor{kurzknappframe}{RGB}{180, 180, 0}
+\definecolor{fehlerboxframe}{RGB}{180, 0, 0}
+\definecolor{warumwichtigframe}{RGB}{0, 100, 150}
+\definecolor{tippboxframe}{RGB}{50,150,50}
+
+% Zähler und Nummerierung pro Section
+\newcounter{aufgabe}
+\newcounter{beispiel}
+\newcounter{merksatz}
+\newcounter{kurzknapp}
+\newcounter{fehlerbox}
+\newcounter{warumwichtigbox}
+\newcounter{tippbox}
+
+\counterwithin{aufgabe}{section}
+\counterwithin{beispiel}{section}
+\counterwithin{merksatz}{section}
+\counterwithin{kurzknapp}{section}
+\counterwithin{fehlerbox}{section}
+\counterwithin{warumwichtigbox}{section}
+\counterwithin{tippbox}{section}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+
+\renewcommand{\theaufgabe}{\thesection.\arabic{aufgabe}}
+\renewcommand{\thebeispiel}{\thesection.\arabic{beispiel}}
+\renewcommand{\themerksatz}{\thesection.\arabic{merksatz}}
+\renewcommand{\thekurzknapp}{\thesection.\arabic{kurzknapp}}
+\renewcommand{\thefehlerbox}{\thesection.\arabic{fehlerbox}}
+\renewcommand{\thewarumwichtigbox}{\thesection.\arabic{warumwichtigbox}}
+\renewcommand{\thetippbox}{\thesection.\arabic{tippbox}}
+\renewcommand{\figurename}{Abb.}
+\renewcommand{\tablename}{Tab.}
+
+% Allgemeine Box-Optionen
+\tcbset{
+  breakable,
+  fonttitle=\bfseries,
+  colbacktitle=white,
+  coltitle=black,
+  enhanced,
+  attach boxed title to top left={yshift=-2mm, xshift=3mm},
+  boxed title style={size=small, colback=white, boxrule=0.5pt},
+  underlay boxed title=\tcbset{interior style={fill=white}}
+}
+
+% Umgebung für Aufgaben:
+\newtcolorbox{aufgabenumgebung}[2][]{%
+  colback=aufgabeboxcolorbg!30!white,
+  colframe=aufgabeboxframe,
+  borderline west={2pt}{0pt}{aufgabeboxframe!50!black, dotted},
+  title={Aufgabe \theaufgabe{} #2}, % Explizite Gruppierung des Titels
+  phantom=\refstepcounter{aufgabe}\label{#1} % #1 ist das Label
+}
+
+% Umgebung für Beispiele:
+\newtcolorbox{beispielumgebung}[2][]{%
+  colback=beispielboxcolorbg!30!white,
+  colframe=beispielboxframe,
+  borderline west={2pt}{0pt}{beispielboxframe!50!black, dashed},
+  title={Beispiel \thebeispiel{} #2}, % Explizite Gruppierung des Titels
+  phantom=\refstepcounter{beispiel}\label{#1} % #1 ist das Label
+}
+
+% Umgebung für Merksätze (Boxen):
+\newtcolorbox{merksatzumgebung}[2][Merksatz]{%
+  colback=merkboxcolorbg!30!white,
+  colframe=merkboxframe,
+  borderline west={2pt}{0pt}{merkboxframe!70!black, solid},
+  title={%
+    {\Large\normalfont\lightning}% <-- Hier ist der Unterschied: \normalfont und gruppiert
+    \hspace{0.1cm} % Abstand zwischen Symbol und Text
+    {\bfseries\itshape\themerksatz{} #2}% <-- Der Textteil
+  },
+  phantom=\refstepcounter{merksatz}\label{#1}
+}
+
+% Umgebung für Infoboxen:
+\newtcolorbox{infoboxumgebung}[1]{%
+  colback=infoboxcolorbg!30!white,
+  colframe=infoboxframe,
+  borderline west={2pt}{0pt}{infoboxframe!50!black, double},
+  title={#1} % Explizite Gruppierung
+  % Keine Nummerierung oder Label für reine Infoboxen vorgesehen
+}
+
+% Umgebung für "Kurz & Knapp" Boxen:
+\newtcolorbox{kurzknappumgebung}[1]{%
+  colback=kurzknappcolorbg!30!white,
+  colframe=kurzknappframe,
+  fonttitle=\bfseries\itshape,
+  title={Kurz \& Knapp \thekurzknapp: #1}, % Explizite Gruppierung
+  borderline west={2pt}{0pt}{kurzknappframe!60!black, solid},
+  phantom=\refstepcounter{kurzknapp}
+}
+
+% Umgebung für "Typische Fehler" Boxen:
+\newtcolorbox{fehlerboxumgebung}[1]{%
+  colback=fehlerboxcolorbg!30!white,
+  colframe=fehlerboxframe,
+  fonttitle=\bfseries,
+  title={Achtung Stolperstein! \thefehlerbox: #1}, % Explizite Gruppierung
+  borderline west={2pt}{0pt}{fehlerboxframe!60!black, solid},
+  phantom=\refstepcounter{fehlerbox}
+}
+
+% Umgebung für "Warum ist das wichtig?" Boxen:
+\newtcolorbox{warumwichtigumgebung}[1]{%
+  colback=warumwichtigcolorbg!30!white,
+  colframe=warumwichtigframe,
+  fonttitle=\bfseries\itshape,
+  title={Warum ist das wichtig? \thewarumwichtigbox: #1}, % Explizite Gruppierung
+  borderline west={2pt}{0pt}{warumwichtigframe!60!black, solid},
+  phantom=\refstepcounter{warumwichtigbox}
+}
+
+% Umgebung für "Tipp" Boxen:
+\newtcolorbox{tippumgebung}[1]{%
+  colback=tippboxcolorbg!30!white,
+  colframe=tippboxframe,
+  fonttitle=\bfseries\itshape,
+  title={Tipp \thetippbox: #1}, % Explizite Gruppierung
+  borderline west={2pt}{0pt}{tippboxframe!60!black, solid},
+  phantom=\refstepcounter{tippbox}
+}
+
+
+% Zähler für Lösungen
+\newcounter{loesung}
+\counterwithin{loesung}{section}
+\renewcommand{\theloesung}{\thesection.\arabic{loesung}}
+
+% Farben für Lösungsbox
+\definecolor{loesungboxcolorbg}{RGB}{230, 245, 255} % Ein helles Blau
+\definecolor{loesungboxframe}{RGB}{0, 100, 150} % Ein passendes Dunkelblau
+
+% Umgebung für Lösungen:
+\newtcolorbox{loesungsumgebung}[2][]{%
+  colback=loesungboxcolorbg!30!white,
+  colframe=loesungboxframe,
+  borderline west={2pt}{0pt}{loesungboxframe!50!black, solid},
+  title={Lösung zu Aufgabe \theloesung{} #2}, % Titel: "Lösung zu Aufgabe X.Y"
+  phantom=\refstepcounter{loesung}\label{#1} % #1 ist das Label, falls benötigt
+}
+
+% Makro für Äquivalenzumformungen
+\newcommand{\umformung}[4]{%
+\ensuremath{#1} & \ensuremath{=} & \ensuremath{#2} & \vline & \ensuremath{#3 #4} \\%
+}
+\newcommand{\umformungend}[2]{%
+\ensuremath{#1} & \ensuremath{=} & \ensuremath{#2} & & \\%
+}
+
+\begin{document}
+\begin{center}
+    {\Huge \textbf{Lösungsbuch: Von Dreisatz zu Integralen}}\\
+    \vspace{0.5cm}
+    {\Large Ausführliche Lösungen für Selbstlerner}\\
+    \vspace{1cm}
+    % \includegraphics[width=5cm]{placeholder_logo.png} % Platzhalter für Logo, falls gewünscht
+    \vspace{1cm}
+\end{center}
+\setcounter{section}{0}
+\tableofcontents
+\newpage
+
+% Hier beginnen die Lösungen für die einzelnen Kapitel
+% Ersetzen Sie die folgenden Zeilen durch Ihre tatsächlichen Lösungen
+% Jede Lösung sollte ausführlich und schrittweise erklärt werden.
+\include{Kapitel/k1_einleitung}
+\include{Kapitel/k2_dreisatz}
+\include{Kapitel/k3_lin_fkt}
+\include{Kapitel/k4_quadr_fkt}
+\include{Kapitel/k5_diff}
+\include{Kapitel/k6_int}
+\include{Kapitel/k7_exp_fkt}
+\include{Kapitel/k8_ln_fkt}
+\include{Kapitel/k9_trigo}
+\include{Kapitel/k10_abschluss}
+% Fügen Sie hier weitere Lösungen für andere Aufgaben ein.
+% Sie können die Umgebungen aufgabenumgebung und beispielumgebung verwenden,
+% um die Aufgabenstellung und die entsprechende Lösung zu strukturieren.
+% Nutzen Sie auch merksatzumgebung, tippumgebung, fehlerboxumgebung etc.,
+% um zusätzliche Erklärungen und Hinweise zu geben.
+
+\end{document}

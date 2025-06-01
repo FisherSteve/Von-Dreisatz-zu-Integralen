@@ -1,0 +1,116 @@
+\appendix
+\section*{Anhang} % Verwendung von \chapter* für unnummerierten Eintrag im Inhaltsverzeichnis
+\addcontentsline{toc}{section}{Anhang} % Manuelles Hinzufügen zum Inhaltsverzeichnis
+
+\section*{A: Algebraische Formelsammlung}
+\label{anhang:formelsammlung}
+
+Diese Sammlung fasst einige wichtige algebraische Regeln und Formeln zusammen, die im gesamten Skript nützlich sind.
+
+\subsection*{A.1 Bruchrechnung}
+Für $a, b, c, d \in \mathbb{R}$ und Nenner $\neq 0$:
+\begin{itemize}
+    \item \textbf{Erweitern:} $\frac{a}{b} = \frac{a \cdot c}{b \cdot c}$ \quad (für $c \neq 0$)
+    \item \textbf{Kürzen:} $\frac{a \cdot c}{b \cdot c} = \frac{a}{b}$ \quad (für $c \neq 0$)
+    \item \textbf{Addition/Subtraktion (gleichnamig):} $\frac{a}{c} \pm \frac{b}{c} = \frac{a \pm b}{c}$
+    \item \textbf{Addition/Subtraktion (ungleichnamig):} $\frac{a}{b} \pm \frac{c}{d} = \frac{a \cdot d \pm b \cdot c}{b \cdot d}$ (Hauptnenner bilden)
+    \item \textbf{Multiplikation:} $\frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}$
+    \item \textbf{Division (Kehrwert):} $\frac{a}{b} : \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{a \cdot d}{b \cdot c}$
+    \item \textbf{Doppelbruch:} $\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{a}{b} \cdot \frac{d}{c} = \frac{ad}{bc}$
+    \item \textbf{Umwandlung Dezimalzahl in Bruch:} z.B. $0.75 = \frac{75}{100} = \frac{3}{4}$
+    \item \textbf{Umwandlung gemischte Zahl in Bruch:} z.B. $2\frac{3}{5} = \frac{2 \cdot 5 + 3}{5} = \frac{13}{5}$
+\end{itemize}
+
+\begin{multicols}{2} % Start der zweispaltigen Umgebung
+
+\subsection*{A.2 Potenzgesetze}
+Für $a, b \in \mathbb{R}$, $a,b \neq 0$ und $m, n \in \mathbb{Q}$ (bzw. $\mathbb{Z}$ für einige Regeln, wenn die Basis negativ sein kann):
+\begin{itemize}
+    \item $a^m \cdot a^n = a^{m+n}$
+    \item $\frac{a^m}{a^n} = a^{m-n}$
+    \item $(a^m)^n = a^{m \cdot n}$
+    \item $(a \cdot b)^n = a^n \cdot b^n$
+    \item $\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}$
+    \item $a^0 = 1$
+    \item $a^1 = a$
+    \item $a^{-n} = \frac{1}{a^n}$
+    \item $a^{\frac{1}{n}} = \sqrt[n]{a}$ \quad (für $a \ge 0$, wenn $n$ gerade)
+    \item $a^{\frac{m}{n}} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m$ \quad (für $a \ge 0$, wenn $n$ gerade)
+\end{itemize}
+
+\subsection*{A.3 Wurzelgesetze}
+Für $a, b \ge 0$ und $n, m \in \mathbb{N}, n,m \ge 2$:
+\begin{itemize}
+    \item $\sqrt[n]{a} \cdot \sqrt[n]{b} = \sqrt[n]{a \cdot b}$
+    \item $\frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}}$ \quad (für $b \neq 0$)
+    \item $\sqrt[m]{\sqrt[n]{a}} = \sqrt[m \cdot n]{a}$
+    \item $(\sqrt[n]{a})^m = \sqrt[n]{a^m}$
+    \item $\sqrt[n]{a^n} = a$ (für $a \ge 0$)
+    \item $a \sqrt[n]{b} = \sqrt[n]{a^n \cdot b}$ (Teilweises Radizieren / unter die Wurzel bringen)
+\end{itemize}
+
+\subsection*{A.4 Binomische Formeln}
+Für $a, b \in \mathbb{R}$:
+\begin{itemize}
+    \item $(a+b)^2 = a^2 + 2ab + b^2$
+    \item $(a-b)^2 = a^2 - 2ab + b^2$
+    \item $(a+b)(a-b) = a^2 - b^2$
+\end{itemize}
+Erweiterungen:
+\begin{itemize}
+    \item $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$
+    \item $(a-b)^3 = a^3 - 3a^2b + 3ab^2 - b^3$
+\end{itemize}
+
+\subsection*{A.5 Logarithmengesetze}
+Für $u, v > 0$, Basis $b>0, b\neq 1$ und $r \in \mathbb{R}$:
+\begin{itemize}
+    \item $\log_b(u \cdot v) = \log_b(u) + \log_b(v)$
+    \item $\log_b\left(\frac{u}{v}\right) = \log_b(u) - \log_b(v)$
+    \item $\log_b(u^r) = r \cdot \log_b(u)$
+\end{itemize}
+Speziell für den natürlichen Logarithmus ($\ln$, Basis $e$):
+\begin{itemize}
+    \item $\ln(e) = 1$
+    \item $\ln(1) = 0$
+    \item $\ln(e^x) = x$
+    \item $e^{\ln(x)} = x$ (für $x>0$)
+\end{itemize}
+
+\end{multicols}
+
+\section*{B: Beispiele zur Termumformung und zum Lösen von Gleichungen}
+\label{anhang:termumformungen}
+
+\subsection*{B.1 Lineare Gleichung lösen}
+Löse die folgende Gleichung nach $x$:
+\[ 5(x-2) + 3x = 2(x+7) - 4 \]
+\textbf{Lösungsweg:}
+\begin{center}
+\begin{tabular}{r @{\,} c @{\,} l @{\quad\quad} l}
+$5(x-2) + 3x$ & $=$ & $2(x+7) - 4$ & \small{Klammern ausmultiplizieren} \\
+$5x - 10 + 3x$ & $=$ & $2x + 14 - 4$ & \small{Terme zusammenfassen} \\
+$8x - 10$ & $=$ & $2x + 10$ & $| -2x$ \\
+$6x - 10$ & $=$ & $10$ & $| +10$ \\
+$6x$ & $=$ & $20$ & $| :6$ \\
+$x$ & $=$ & $\frac{20}{6}$ & \small{Kürzen} \\
+$x$ & $=$ & $\frac{10}{3}$ & \\
+\end{tabular}
+\end{center}
+Die Lösung der Gleichung ist $x = \frac{10}{3}$.
+
+\subsection*{B.2 Komplexen Bruchterm vereinfachen}
+Vereinfache den folgenden Bruchterm so weit wie möglich (alle Variablen seien so gewählt, dass die Ausdrücke definiert sind und keine Nenner Null werden):
+\[ \frac{(a^2b^{-3})^2 \cdot (ab)^4}{a^5 b^{-1}} : \frac{(a^2b)^3}{b^5 a^{-1}} \]
+\textbf{Lösungsweg:}
+Wir vereinfachen zuerst den ersten Bruch (Dividend) und den zweiten Bruch (Divisor) getrennt und wenden dann die Divisionsregel für Brüche an.
+
+\textbf{1. Dividend vereinfachen:} $D_1 = \frac{(a^2b^{-3})^2 \cdot (ab)^4}{a^5 b^{-1}}$
+\begin{align*} D_1 &= \frac{(a^{2\cdot2}b^{-3\cdot2}) \cdot (a^1b^1)^4}{a^5 b^{-1}} && \text{(Potenzgesetz: $(x^m)^n = x^{mn}$)} \\ &= \frac{a^4 b^{-6} \cdot a^4 b^4}{a^5 b^{-1}} && \text{(Potenzgesetz: $(xy)^n = x^n y^n$)} \\ &= \frac{a^{4+4} b^{-6+4}}{a^5 b^{-1}} && \text{(Potenzgesetz: $x^m x^n = x^{m+n}$)} \\ &= \frac{a^8 b^{-2}}{a^5 b^{-1}} \\ &= a^{8-5} \cdot b^{-2-(-1)} && \text{(Potenzgesetz: $x^m/x^n = x^{m-n}$)} \\ &= a^3 \cdot b^{-2+1} \\ &= a^3 b^{-1} = \frac{a^3}{b} \end{align*}
+
+\textbf{2. Divisor vereinfachen:} $D_2 = \frac{(a^2b)^3}{b^5 a^{-1}}$
+\begin{align*} D_2 &= \frac{(a^{2\cdot3}b^{1\cdot3})}{b^5 a^{-1}} && \text{(Potenzgesetz: $(x^m)^n = x^{mn}$ und $(xy)^n = x^n y^n$)} \\ &= \frac{a^6 b^3}{b^5 a^{-1}} \\ &= a^{6-(-1)} \cdot b^{3-5} && \text{(Potenzgesetz: $x^m/x^n = x^{m-n}$)} \\ &= a^{6+1} \cdot b^{-2} \\ &= a^7 b^{-2} = \frac{a^7}{b^2} \end{align*}
+
+\textbf{3. Division durchführen:} $\text{Dividend} : \text{Divisor} = D_1 : D_2 = D_1 \cdot \frac{1}{D_2}$ (bzw. mit Kehrwert multiplizieren)
+\begin{align*} \frac{a^3}{b} : \frac{a^7}{b^2} &= \frac{a^3}{b} \cdot \frac{b^2}{a^7} \\ &= \frac{a^3 b^2}{b a^7} \\ &= a^{3-7} \cdot b^{2-1} && \text{(Kürzen bzw. Potenzgesetze)} \\ &= a^{-4} b^1 \\ &= \frac{b}{a^4} \end{align*}
+Der vereinfachte Term ist $\frac{b}{a^4}$.

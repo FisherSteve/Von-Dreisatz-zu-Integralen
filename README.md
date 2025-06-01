@@ -14,7 +14,7 @@ Dieses Material richtet sich an:
 ## Inhalt des Repositories
 
 * **`Von_Dreisatz_zu_Integralen.pdf`**: Das Hauptlehrbuch.
-* **`[Von_Dreisatz_zu_Integralen_Lösungen].pdf`**: Das Lösungsbuch zum Lehrbuch. 
+* **`Von_Dreisatz_zu_Integralen_Lösungen.pdf`**: Das Lösungsbuch zum Lehrbuch. 
 
 ## Schwerpunkte des Inhalts
 

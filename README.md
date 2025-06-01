@@ -1,13 +1,13 @@
 # Von Dreisatz zu Integralen – Dein Wegweiser durch die Analysis
 
-Dieses Repository enthält das Lernskript "Von Dreisatz zu Integralen – Dein Wegweiser durch die Analysis" [cite: 1] sowie das dazugehörige Lösungsbuch. Es dient als umfassender Begleiter für das Selbststudium oder den unterrichtsbegleitenden Einsatz im Bereich der Analysis[cite: 62].
+Dieses Repository enthält das Lernskript "Von Dreisatz zu Integralen – Dein Wegweiser durch die Analysis"  sowie das dazugehörige Lösungsbuch. Es dient als umfassender Begleiter für das Selbststudium oder den unterrichtsbegleitenden Einsatz im Bereich der Analysis[cite: 62].
 
 ## Zielgruppe
 
 Dieses Material richtet sich an:
 
-* Alle, die sich im Selbststudium oder begleitend zum Unterricht in die Analysis einarbeiten möchten[cite: 62].
-* Insbesondere Schülerinnen und Schüler zur Vorbereitung auf das Abitur (z.B. in NRW [cite: 53]).
+* Alle, die sich im Selbststudium oder begleitend zum Unterricht in die Analysis einarbeiten möchten.
+* Insbesondere Schülerinnen und Schüler zur Vorbereitung auf das Abitur (z.B. in NRW ).
 * Studierende in mathematisch-naturwissenschaftlichen oder technischen Fächern.
 * Personen, für die Deutsch nicht die Muttersprache ist, da mathematische Symbole oft universell sind und Erklärungen langsam gelesen werden können[cite: 63, 64].
 
